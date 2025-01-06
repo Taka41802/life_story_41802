@@ -1,0 +1,18 @@
+<div class="contents row">
+  <div class="content_post" >
+    <div class="more">
+      <span><%= image_tag 'arrow_top.png' %></span>
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_album_path(@album.id) %>
+        </li>
+        <li>
+          <%= link_to '削除', album_path(@album.id), data: { turbo_method: :delete } %>
+        </li>
+      </ul>
+    </div>
+    <p><%= @album.title %></p>
+    <span class="name"><%= @album.title %>
+    </span>
+  </div>
+</div>
