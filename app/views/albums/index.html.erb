@@ -5,7 +5,7 @@
         <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
           <li>
-            <%= link_to '削除', "/albums/#{album.id}", data: { turbo_method: :delete } %>
+            <%= link_to '削除', album_path(album.id), data: { turbo_method: :delete } %>
           </li>
         </ul>
       </div>
