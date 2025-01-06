@@ -1,3 +1,3 @@
 class Album < ApplicationRecord
-  validates :text, presence: true
+  validates :title, presence: true
 end
