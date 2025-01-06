@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_action :set_album, only: [:edit, :show]
   def index
     @albums = Album.all
   end
@@ -19,7 +20,6 @@ class AlbumsController < ApplicationController
   end
 
   def edit
-    @album = Album.find(params[:id])
   end
 
   def update
@@ -28,10 +28,17 @@ class AlbumsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+  end
+
   private
 
   def album_params
     params.require(:album).permit(:title)
+  end
+
+  def set_album
+    @album = Album.find(params[:id])
   end
 
 end
