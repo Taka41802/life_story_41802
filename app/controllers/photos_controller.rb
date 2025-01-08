@@ -1,4 +1,9 @@
 class PhotosController < ApplicationController
+
+  def index
+    @photos = Photo.includes(:user)
+  end
+
   def create
     @photo = Photo.new(photo_params)
 

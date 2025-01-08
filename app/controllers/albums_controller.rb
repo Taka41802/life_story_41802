@@ -30,6 +30,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    @photos = @album.photos
   end
 
   private
