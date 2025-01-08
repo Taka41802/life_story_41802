@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :set_album, only: [:edit, :show]
+  before_action :set_album, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
   def index
     @albums = Album.includes(:user)
@@ -10,8 +10,12 @@ class AlbumsController < ApplicationController
   end
 
   def create
-    Album.create(album_params)
-    redirect_to '/'
+    @album = Album.new(album_params)
+    if @album.save
+      redirect_to @album
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -24,9 +28,11 @@ class AlbumsController < ApplicationController
   end
 
   def update
-    album = Album.find(params[:id])
-    album.update(album_params)
-    redirect_to root_path
+    if @album.update(album_params)
+      redirect_to @album
+    else
+      render :edit
+    end
   end
 
   def show
