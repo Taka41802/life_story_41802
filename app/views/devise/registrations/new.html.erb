@@ -1,11 +1,11 @@
 <div class="contents row">
   <div class="container">
-    <h2>Sign up</h2>
+    <h2>サインアップ画面</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :nickname %><br />
+        <%= f.label :nickname, "ニックネーム"%><br />
         <%= f.text_field :nickname %>
       </div>
 
@@ -17,7 +17,7 @@
       <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(最低<%= @minimum_password_length %> 文字以上)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "サインアップ" %>
       </div>
     <% end %>
   </div>
