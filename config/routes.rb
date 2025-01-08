@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :albums
   root to: 'albums#index'
   resources :users, only: :show
+  resources :photos
 end
