@@ -15,9 +15,11 @@
           </li>
         </ul>
       </div>
-      <p></p>
+      <p><%= album.title %></p>
       <span class="name">
-        <%= album.title %>
+        <a href="">
+          <span>作成者</span><%= album.user.nickname %>
+        </a>
       </span>
     </div>
   <% end %>
