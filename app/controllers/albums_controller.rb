@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
   def index
-    @albums = Album.all
+    @albums = Album.includes(:user)
   end
 
   def new
@@ -35,7 +35,7 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:title)
+    params.require(:album).permit(:title).merge(user_id: current_user.id)
   end
 
   def set_album

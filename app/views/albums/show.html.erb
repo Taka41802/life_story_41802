@@ -12,7 +12,10 @@
       </ul>
     </div>
     <p><%= @album.title %></p>
-    <span class="name"><%= @album.title %>
+    <span class="name">
+      <a href="/users/<%= @album.user.id %>">
+        <span>作成者</span><%= @album.user.nickname %>
+      </a>
     </span>
   </div>
 </div>
