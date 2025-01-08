@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show]
   def index
     @albums = Album.all
   end
@@ -39,6 +40,12 @@ class AlbumsController < ApplicationController
 
   def set_album
     @album = Album.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 
 end
