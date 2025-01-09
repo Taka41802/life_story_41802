@@ -7,9 +7,11 @@ class PhotosController < ApplicationController
 
   def create
     @photo = @album.photos.new(photo_params)
+    @photo.user = current_user
     if @photo.save
-      redirect_to album_photo_path(@album, @photo), notice: 'Photo was successfully created.'
+      redirect_to album_path(@album), notice: 'Photo was successfully created.'
     else
+      flash.now[:alert] = @photo.errors.full_messages.join(", ")
       render :new
     end
   end
@@ -21,6 +23,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:title, :description, :album_id, :user_id, :image, :posted_date)
+    params.require(:photo).permit(:description, :image, :posted_date)
   end
 end

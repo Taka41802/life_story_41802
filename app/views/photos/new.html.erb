@@ -1,5 +1,8 @@
 <div class="contents row">
   <div class="container">
+    <% if flash[:alert] %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
     <h3>新しい写真を追加する</h3>
     <%= form_with(model: [@album, @photo], local: true, html: { class: 'photo-form' }) do |form| %>
       <div class="field">
