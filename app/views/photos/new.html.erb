@@ -1,0 +1,22 @@
+<div class="contents row">
+  <div class="container">
+    <% if flash[:alert] %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
+    <h3>新しい写真を追加する</h3>
+    <%= form_with(model: [@album, @photo], local: true, html: { class: 'photo-form' }) do |form| %>
+      <div class="field">
+        <%= form.text_area :description, placeholder: "メモ", class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= form.file_field :image, class: "form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "追加する", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    <%= link_to '戻る', album_path(@album), class: "btn btn-secondary mt-3" %>
+  </div>
+</div>

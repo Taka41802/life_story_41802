@@ -24,7 +24,11 @@
               </li>
             </ul>
           </span>
-          <%= link_to "作成する", new_album_path, class: "post" %>
+          <% if params[:controller] == 'albums' && params[:action] == 'show' && @album.present? %>
+            <%= link_to "写真追加", new_album_photo_path(@album), class: "post" %>
+          <% else %>
+            <%= link_to "作成する", new_album_path, class: "post" %>
+          <% end %>
           </div>
         <% else %>
           <div class="grid-6">
