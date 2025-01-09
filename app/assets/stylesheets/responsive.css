@@ -1,0 +1,114 @@
+.contents {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2em; 
+  color: #333; 
+}
+
+p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact input, 
+#contact textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background-color: #45a049;
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+}
+
+.feature-item {
+  flex: 1 1 auto; 
+  margin: 10px;
+  text-align: center;
+  max-width: 30%;
+}
+
+.feature-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; 
+}
+
+#features ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#features ul li {
+  font-size: 1.2em;
+  color: #444;
+}
+
+.section {
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#intro {
+  background-image: url('path/to/your/background1.jpg');
+  background-size: cover;
+  color: white; 
+}
+
+#features {
+  background-image: url('path/to/your/background2.jpg');
+  background-size: cover;
+  color: black; 
+}
+
+#testimonials {
+  background-image: url('path/to/your/background3.jpg');
+  background-size: cover;
+  color: white;
+}
+
+#download {
+  background-image: url('path/to/your/background4.jpg');
+  background-size: cover;
+  color: black; 
+}
+
+#contact {
+  background-image: url('path/to/your/background5.jpg');
+  background-size: cover;
+  color: white;
+}
+
+@media screen and (min-width: 961px) {
+  .contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
