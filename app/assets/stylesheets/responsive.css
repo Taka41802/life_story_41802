@@ -1,4 +1,4 @@
-.contents {
+.lifestory-contents {
   max-width: 1200px; 
   margin: 0 auto; 
   padding: 20px;
@@ -14,20 +14,20 @@ p {
   color: #666;
 }
 
-#contact form {
+#lifestory-contact form {
   display: flex;
   flex-direction: column;
 }
 
-#contact input, 
-#contact textarea {
+#lifestory-contact input, 
+#lifestory-contact textarea {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-#contact button {
+#lifestory-contact button {
   padding: 10px 20px;
   background-color: #4CAF50;
   color: white;
@@ -36,77 +36,86 @@ p {
   cursor: pointer;
 }
 
-#contact button:hover {
+#lifestory-contact button:hover {
   background-color: #45a049;
 }
 
-.features-list {
+.lifestory-features-list {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-around; 
 }
 
-.feature-item {
+.lifestory-feature-item {
   flex: 1 1 auto; 
   margin: 10px;
   text-align: center;
   max-width: 30%;
 }
 
-.feature-item img {
+.lifestory-feature-item img {
   max-width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover; 
   border-radius: 10px; 
 }
 
-#features ul {
+#lifestory-features ul {
   list-style-type: disc;
   padding-left: 20px;
 }
 
-#features ul li {
+#lifestory-features ul li {
   font-size: 1.2em;
   color: #444;
 }
 
-.section {
+.lifestory-section {
   margin-bottom: 50px;
   padding: 20px;
   border-radius: 10px;
 }
 
-#intro {
-  background-image: url('path/to/your/background1.jpg');
+#lifestory-intro {
+  background-image: url('<%= asset_path("AdobeStock_377689537.jpeg") %>');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white; 
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
 }
 
-#features {
-  background-image: url('path/to/your/background2.jpg');
+#lifestory-features {
+  background-image: url('');
   background-size: cover;
   color: black; 
 }
 
-#testimonials {
-  background-image: url('path/to/your/background3.jpg');
+#lifestory-testimonials {
+  background-image: url('');
   background-size: cover;
   color: white;
 }
 
-#download {
-  background-image: url('path/to/your/background4.jpg');
+#lifestory-download {
+  background-image: url('');
   background-size: cover;
   color: black; 
 }
 
-#contact {
-  background-image: url('path/to/your/background5.jpg');
+#lifestory-contact {
+  background-image: url('');
   background-size: cover;
   color: white;
 }
 
 @media screen and (min-width: 961px) {
-  .contents {
+  .lifestory-contents {
     display: flex;
     flex-direction: column;
     align-items: center;
