@@ -4,6 +4,12 @@
   padding: 20px;
 }
 
+section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); 
+  padding: 40px 20px; 
+}
+
 h2 {
   font-size: 2em;
   color: #333;
@@ -19,7 +25,7 @@ p {
   flex-direction: column;
 }
 
-#lifestory-contact input, 
+#lifestory-contact input,
 #lifestory-contact textarea {
   margin-bottom: 10px;
   padding: 10px;
@@ -71,24 +77,21 @@ p {
 }
 
 #lifestory-intro {
+  background-image: url('AdobeStock_459423428.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
   text-align: center;
   height: 600px;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .lifestory-intro-content {
-  background-image: url(AdobeStock_459423428.jpeg);
-  background-size: cover; /* 背景画像をビューポートに合わせて調整 */
-  background-position: center; /* 背景画像を中央に配置 */
-  width: 100%; /* コンテンツ全体に適用 */
-  height: 100%; /* 親要素の高さに合わせる */
+  width: 100%;
+  height: 100%;
   padding: 20px;
   border-radius: 10px;
   font-size: larger;
@@ -96,56 +99,51 @@ p {
   flex-direction: column;
   align-items: center;
   position: relative;
-  color: white; /* テキスト色を白に設定 */
+  color: white;
 }
-
-@media screen and (min-width: 961px) {
-  .lifestory-contents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 
 .banner-section {
-  margin-top: 100px;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  height: 300px; /* 高さの調整 */
   background-image: url('AdobeStock_356100280.jpeg');
-  background-size: cover; /* 横幅に合わせて画像をカバー */
-  background-position: center; /* 画像の位置を中央に */
-  background-repeat: no-repeat; /* 画像の繰り返しを防止 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 24px; /* 文字サイズの調整 */
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.banner-text h2, .banner-text p {
+.banner-text h2 {
   margin: 0;
   padding: 5px;
-  border-radius: 5px; /* 角を丸くする */
+  font-size: 50px;
+}
+
+.banner-text p {
+  margin: 0;
+  padding: 5px;
+  font-size: 1.5rem;
 }
 
 .thoughts-section {
+  background-color: #f0f0f0;  
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
 .thoughts-content {
   display: flex;
   width: 100%;
-  max-width: 1200px; /* 必要に応じて調整 */
+  max-width: 1200px; 
   justify-content: space-between;
 }
 
@@ -168,4 +166,31 @@ p {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 10px;
+}
+
+#lifestory-testimonials {
+  background-color: #e0e0e0; 
+  padding: 40px;
+  text-align: center;
+}
+
+#lifestory-download {
+  background-color: #cccccc;
+  padding: 40px;
+  text-align: center;
+}
+
+#lifestory-contact {
+  background-color: #666;
+  padding: 40px;
+  text-align: center;
+}
+
+@media screen and (min-width: 961px) {
+  .lifestory-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
