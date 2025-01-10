@@ -1,12 +1,12 @@
 .lifestory-contents {
-  max-width: 1200px; 
-  margin: 0 auto; 
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
 h2 {
-  font-size: 2em; 
-  color: #333; 
+  font-size: 2em;
+  color: #333;
 }
 
 p {
@@ -42,12 +42,12 @@ p {
 
 .lifestory-features-list {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-around; 
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .lifestory-feature-item {
-  flex: 1 1 auto; 
+  flex: 1 1 auto;
   margin: 10px;
   text-align: center;
   max-width: 30%;
@@ -56,8 +56,8 @@ p {
 .lifestory-feature-item img {
   max-width: 100%;
   height: 200px;
-  object-fit: cover; 
-  border-radius: 10px; 
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 #lifestory-features ul {
@@ -70,48 +70,33 @@ p {
   color: #444;
 }
 
-.lifestory-section {
-  margin-bottom: 50px;
-  padding: 20px;
-  border-radius: 10px;
-}
-
 #lifestory-intro {
-  background-image: url('<%= asset_path("AdobeStock_377689537.jpeg") %>');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white; 
+  color: white;
   text-align: center;
+  height: 600px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
-  width: 100%;
 }
 
-#lifestory-features {
-  background-image: url('');
-  background-size: cover;
-  color: black; 
-}
-
-#lifestory-testimonials {
-  background-image: url('');
-  background-size: cover;
-  color: white;
-}
-
-#lifestory-download {
-  background-image: url('');
-  background-size: cover;
-  color: black; 
-}
-
-#lifestory-contact {
-  background-image: url('');
-  background-size: cover;
-  color: white;
+.lifestory-intro-content {
+  background-image: url(AdobeStock_359569550.jpeg);
+  background-size: cover; /* 背景画像をビューポートに合わせて調整 */
+  background-position: center; /* 背景画像を中央に配置 */
+  width: 100%; /* コンテンツ全体に適用 */
+  height: 100%; /* 親要素の高さに合わせる */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white; /* テキスト色を白に設定 */
 }
 
 @media screen and (min-width: 961px) {
