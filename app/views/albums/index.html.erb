@@ -1,26 +1,75 @@
-<div class="contents row">
-  <% @albums.each do |album| %>
-    <div class="content_post" >
-      <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-          <li>
-            <%= link_to '詳細', album_path(album.id) %>
-          </li>
-          <li>
-            <%= link_to '編集', edit_album_path(album.id) %>
-          </li>
-          <li>
-            <%= link_to '削除', album_path(album.id), data: { turbo_method: :delete } %>
-          </li>
-        </ul>
-      </div>
-      <p><%= album.title %></p>
-      <span class="name">
-        <a href="/users/<%= album.user.id %>">
-          <span>作成者</span><%= album.user.nickname %>
-        </a>
-      </span>
+<div class="lifestory-contents row">
+  <section id="lifestory-intro">
+    <div class="lifestory-intro-content">
+      <h2>写真と物語が繋ぐ、特別な場所</h2>
+      <p></p>
     </div>
-  <% end %>
+  </section>
+
+  <section id="lifestory-features">
+    <h2>機能紹介</h2>
+    <ul class="lifestory-features-list">
+      <li class="lifestory-feature-item">
+        写真や動画の共有
+        <img src="<%= asset_path('AdobeStock_359569550.jpeg') %>" alt="写真や動画の共有">
+      </li>
+      <li class="lifestory-feature-item">
+        アルバム作成機能
+        <img src="<%= asset_path('AdobeStock_377689537.jpeg') %>" alt="アルバム作成機能">
+      </li>
+      <li class="lifestory-feature-item">
+        プライバシー設定
+        <img src="<%= asset_path('AdobeStock_215178828.jpeg') %>" alt="プライバシー設定">
+      </li>
+      <li class="lifestory-feature-item">
+        家族との共同編集
+        <img src="<%= asset_path('AdobeStock_250192845.jpeg') %>" alt="フレンドとの共同編集">
+      </li>
+      <li class="lifestory-feature-item">
+        スライドショーの再生機能
+        <img src="<%= asset_path('AdobeStock_536583422.jpeg') %>" alt="スライドショーの再生機能">
+      </li>
+    </ul>
+  </section>
+
+  <section id="lifestory-banner" class="banner-section">
+  <div class="banner-text">
+    <h2>製作者の想い</h2>
+    <p></p>
+  </div>
+</section>
+
+  <section id="lifestory-thoughts" class="thoughts-section">
+  <div class="thoughts-content">
+    <div class="text-content">
+      <p>
+        家族や友人との大切な瞬間を一生の宝物として残したい。離れていても笑顔や感動を共有したい。思い出を振り返るたびに幸せな気持ちになれるように、私たちのアプリは誕生しました。一瞬一瞬が宝物であり、その瞬間を逃さず美しく保存することで、未来の自分や家族に愛と感動を伝え続けたい。安心して使えるプライバシー管理と簡単な操作で、誰もがいつでも思い出を共有できる場所を提供します。心からの情熱を込めて、このアプリを作りました。
+      </p>
+    </div>
+    <div class="image-content">
+      <img src="<%= asset_path('AdobeStock_261487920.jpeg') %>" alt="バナー画像">
+    </div>
+  </div>
+</section>
+
+  <section id="lifestory-testimonials">
+    <h2>お客様の声</h2>
+    <p>ユーザーのレビューをここに表示します。</p>
+  </section>
+
+  <section id="lifestory-download">
+    <h2>ダウンロード</h2>
+    <a href="https://www.apple.com/jp/ios/app-store/">App Store</a>
+    <a href="https://play.google.com/store">Google Play</a>
+  </section>
+
+  <section id="lifestory-contact">
+    <h2>お問い合わせ</h2>
+    <form action="/contact" method="post">
+      <input type="text" name="name" placeholder="名前">
+      <input type="email" name="email" placeholder="メールアドレス">
+      <textarea name="message" placeholder="メッセージ"></textarea>
+      <button type="submit">送信</button>
+    </form>
+  </section>
 </div>

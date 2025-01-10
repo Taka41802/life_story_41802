@@ -1,0 +1,196 @@
+.lifestory-contents {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); 
+  padding: 40px 20px; 
+}
+
+h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+#lifestory-contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#lifestory-contact input,
+#lifestory-contact textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#lifestory-contact button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#lifestory-contact button:hover {
+  background-color: #45a049;
+}
+
+.lifestory-features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.lifestory-feature-item {
+  flex: 1 1 auto;
+  margin: 10px;
+  text-align: center;
+  max-width: 30%;
+}
+
+.lifestory-feature-item img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#lifestory-features ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#lifestory-features ul li {
+  font-size: 1.2em;
+  color: #444;
+}
+
+#lifestory-intro {
+  background-image: url('AdobeStock_459423428.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lifestory-intro-content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.banner-section {
+  background-image: url('AdobeStock_356100280.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.banner-text h2 {
+  margin: 0;
+  padding: 5px;
+  font-size: 50px;
+}
+
+.banner-text p {
+  margin: 0;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+.thoughts-section {
+  background-color: #f0f0f0;  
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thoughts-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; 
+  justify-content: space-between;
+}
+
+.text-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#lifestory-testimonials {
+  background-color: #e0e0e0; 
+  padding: 40px;
+  text-align: center;
+}
+
+#lifestory-download {
+  background-color: #cccccc;
+  padding: 40px;
+  text-align: center;
+}
+
+#lifestory-contact {
+  background-color: #666;
+  padding: 40px;
+  text-align: center;
+}
+
+@media screen and (min-width: 961px) {
+  .lifestory-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
