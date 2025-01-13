@@ -1052,3 +1052,52 @@ footer p {
 .search-form .search-btn {
   width: 10%;
 }
+
+.albums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.album {
+  width: 48%;
+  margin-bottom: 20px;
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+}
+
+.album h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.album .more {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+}
+
+.album .more ul.more_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.album .more ul.more_list li {
+  margin-bottom: 5px;
+}
+
+.album-photo {
+  width: 100%;
+  height: auto;
+  max-width: 300px; /* 画像の最大幅を指定 */
+  max-height: 200px; /* 画像の最大高さを指定 */
+  object-fit: cover; /* 画像が比率を維持しながら指定された領域に収まるようにする */
+  margin-bottom: 15px;
+}

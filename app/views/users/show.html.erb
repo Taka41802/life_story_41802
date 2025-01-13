@@ -1,23 +1,24 @@
 <div class="contents row">
   <p><%= @nickname %>さんのアルバム一覧</p>
-  <% @albums.each do |album| %>
-    <div class="content_post" >
-      <div class="more">
-        <span><h2><%= @album.title %></h2>
-
-<% @album.photos.each do |photo| %>
-  <%= image_tag photo %>
-<% end %>/span>
-        <ul class="more_list">
-          <li>
-            <%= link_to '編集', edit_album_path(album) %>
-          </li>
-          <li>
-            <%= link_to '削除', album_path(album), method: :delete, data: { confirm: '本当に削除しますか？' } %>
-          </li>
-        </ul>
+  <div class="albums">
+    <% @albums.each do |album| %>
+      <div class="album">
+        <div class="more">
+          <span><h2><%= album.title %></h2></span>
+          <ul class="more_list">
+            <li>
+              <%= link_to '編集', edit_album_path(album) %>
+            </li>
+            <li>
+              <%= link_to '削除', album_path(album), data: { turbo_method: :delete } %>
+            </li>
+          </ul>
+        </div>
+        <% album.image.each do |image| %>
+          <%= image_tag image, class: "album-photo" %>
+        <% end %>
+        <p><%= album.title %></p>
       </div>
-      <p><%= album.title %></p>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
