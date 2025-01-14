@@ -1,13 +1,12 @@
 class Photo < ApplicationRecord
-  has_one_attached :image
+  has_one_attached :images
   belongs_to :album
   belongs_to :user
 
   before_validation :set_posted_date
 
-  validates :description, presence: true
   validates :posted_date, presence: true
-  validates :image, presence: true, unless: :was_attached?
+  validates :images, presence: true
 
   private
   

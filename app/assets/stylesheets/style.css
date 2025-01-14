@@ -822,7 +822,7 @@ header.header .user_nav ul li a {
   background-size: cover;
 }
 
-.form .contents {
+.form {
   position: absolute;
   left: 0;
   top: 30%;
@@ -1051,4 +1051,105 @@ footer p {
 
 .search-form .search-btn {
   width: 10%;
+}
+
+
+/* マイページ */
+.albums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.album {
+  width: 48%;
+  margin-bottom: 20px;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+}
+
+.album h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.album .more {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.album .more ul.more_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  text-align: left;
+  width: 120px;
+  right: 0;
+  font-size: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.album .more ul.more_list li {
+  border-bottom: 1px solid #ddd;
+}
+
+.album .more ul.more_list li:last-child {
+  border-bottom: 0;
+}
+
+.album .more ul.more_list li a {
+  display: block;
+  padding: 5px;
+}
+
+.album .more ul.more_list li a:hover {
+  background-color: #57C3E9;
+  color: #fff;
+}
+
+.album-photo {
+  width: 100%;
+  height: 500px; /* 固定の高さを指定 */
+  object-fit: cover; /* 画像が比率を維持しながら指定された領域に収まるようにする */
+  border: 1px solid #ddd; /* 画像自体に枠をつける */
+  border-radius: 5px; /* 角を丸くする */
+}
+
+.album:hover .more ul.more_list {
+  display: block;
+}
+
+.albums-page {
+  background-image: url('AdobeStock_586434195.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.album-title {
+  padding: 8px 20px;
+  font-size: 14px;
+  color: #57C3E9;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+}
+
+.contents {
+  width: 100%; /* コンテンツの幅を100%に設定 */
+  padding: 20px; /* 適度なパディングを追加 */
+  box-sizing: border-box; /* ボックスのサイズを含める */
 }

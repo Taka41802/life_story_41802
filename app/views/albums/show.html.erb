@@ -1,35 +1,19 @@
-<div class="contents row">
-  <div class="content_post">
-    <div class="more">
-      <span><%= image_tag 'arrow_top.png' %></span>
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', edit_album_path(@album.id) %>
-        </li>
-        <li>
-          <%= link_to '削除', album_path(@album.id), data: { turbo_method: :delete } %>
-        </li>
-      </ul>
-    </div>
-    <p><%= @album.title %></p>
-    <span class="name">
-      <a href="/users/<%= @album.user.id %>">
-        <span>作成者</span><%= @album.user.nickname %>
-      </a>
-    </span>
-  </div>
-</div>
-
-<div class="contents row">
+<div class="contents row albums-page">
   <% if @photos.any? %>
-    <% @photos.each do |photo| %>
-      <div class="content_post">
-        <% if photo.image.attached? %>
-          <%= image_tag photo.image.variant(resize: "300x300") %>
-        <% end %>
-        <p><%= photo.created_at.strftime("%Y-%m-%d") %></p>
-      </div>
-    <% end %>
+    <p><%= @album.title %>の写真一覧(<span id="photo-count"><%= @photos.size %></span>件)</p>
+    <div class="albums"> <!-- クラス名を統一 -->
+      <% @photos.each do |photo| %>
+        <div class="album"> <!-- クラス名を統一 -->
+          <div class="more">
+            <p class="album-title"><%= photo.created_at.strftime("%Y-%m-%d") %></p> <!-- タイトルの形式を統一 -->
+            <!-- 他のアクションボタンがあればここに追加 -->
+          </div>
+          <% if photo.images.attached? %>
+            <%= image_tag photo.images.variant(resize: "300x300"), class: "album-photo" %> <!-- クラス名を統一 -->
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   <% else %>
     <p>このアルバムにはまだ写真がありません</p>
   <% end %>
