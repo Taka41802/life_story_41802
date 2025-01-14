@@ -1137,14 +1137,6 @@ footer p {
   height: 1000px;
 }
 
-/* アルバム詳細ページの背景設定 */
-.album-details-page {
-  background-image: url('path/to/your/album-details-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 .album-title {
   padding: 8px 20px;
   font-size: 14px;
