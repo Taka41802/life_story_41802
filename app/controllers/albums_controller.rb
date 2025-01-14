@@ -37,6 +37,7 @@ class AlbumsController < ApplicationController
 
   def show
     @photos = @album.photos
+    @nickname = current_user.nickname
   end
 
   private

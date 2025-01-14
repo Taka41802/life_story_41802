@@ -1,6 +1,6 @@
 <div class="contents row albums-page">
   <% if @photos.any? %>
-    <p><%= @user_nickname %>さんの写真一覧</p> <!-- 統一感を持たせるために見出しを追加 -->
+    <p><%= @album.title %>の写真一覧(<span id="photo-count"><%= @photos.size %></span>件)</p>
     <div class="albums"> <!-- クラス名を統一 -->
       <% @photos.each do |photo| %>
         <div class="album"> <!-- クラス名を統一 -->
