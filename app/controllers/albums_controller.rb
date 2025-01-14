@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
   def destroy
     album = Album.find(params[:id])
     album.destroy
-    redirect_to root_path
+    redirect_to "/users/#{current_user.id}"
   end
 
   def edit

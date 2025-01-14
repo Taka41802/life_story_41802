@@ -12,7 +12,9 @@
   <p><%= @album.title %></p>
   <div class="album-photos">
     <% @album.image.each do |img| %>
-      <%= image_tag img %>
+      <%= link_to album_path(@album.id) do %>
+        <%= image_tag img %>
+      <% end %>
     <% end %>
   </div>
   <span class="name">

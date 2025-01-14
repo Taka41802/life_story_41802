@@ -15,9 +15,10 @@
           </ul>
         </div>
         <% album.image.each do |image| %>
-          <%= image_tag image, class: "album-photo" %>
+          <%= link_to album_path(album) do %>
+            <%= image_tag image, class: "album-photo" %>
+          <% end %>
         <% end %>
-        <p><%= album.title %></p>
       </div>
     <% end %>
   </div>
