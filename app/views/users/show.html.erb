@@ -1,10 +1,10 @@
-<div class="contents row">
+<div class="contents row albums-page">
   <p><%= @nickname %>さんのアルバム一覧</p>
   <div class="albums">
     <% @albums.each do |album| %>
       <div class="album">
         <div class="more">
-          <span><h2><%= album.title %></h2></span>
+          <span><h2 class="album-title"><%= album.title %></h2></span>
           <ul class="more_list">
             <li>
               <%= link_to '編集', edit_album_path(album) %>
