@@ -1,15 +1,22 @@
-<div class="contents row albums-page">
+<div class="contents row photo-page">
   <% if @photos.any? %>
     <p><%= @album.title %>の写真一覧(<span id="photo-count"><%= @photos.size %></span>件)</p>
-    <div class="albums"> <!-- クラス名を統一 -->
+    <div class="albums">
       <% @photos.each do |photo| %>
-        <div class="album"> <!-- クラス名を統一 -->
+        <div class="album">
           <div class="more">
-            <p class="album-title"><%= photo.created_at.strftime("%Y-%m-%d") %></p> <!-- タイトルの形式を統一 -->
-            <!-- 他のアクションボタンがあればここに追加 -->
+            <p class="album-title">・・・</p>
+            <ul class="more_list">
+              <li>
+                <%= link_to '編集', edit_album_photo_path(@album, photo) %>
+              </li>
+              <li>
+                <%= link_to '削除', album_photo_path(@album, photo), data: { turbo_method: :delete } %>
+              </li>
+            </ul>
           </div>
           <% if photo.images.attached? %>
-            <%= image_tag photo.images.variant(resize: "300x300"), class: "album-photo" %> <!-- クラス名を統一 -->
+            <%= image_tag photo.images, class: "album-photo" %>
           <% end %>
         </div>
       <% end %>

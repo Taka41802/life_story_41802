@@ -1138,6 +1138,14 @@ footer p {
   min-height: 100vh;
 }
 
+.photo-page {
+  background-image: url('AdobeStock_489467049.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
 .album-title {
   padding: 8px 20px;
   font-size: 14px;
