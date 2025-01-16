@@ -52,10 +52,34 @@
   </div>
 </section>
 
-  <section id="lifestory-testimonials">
-    <h2>お客様の声</h2>
-    <p>ユーザーのレビューをここに表示します。</p>
-  </section>
+<section id="lifestory-testimonials">
+  <div class="contents row albums-page">
+    <h2>アルバム例</h2>
+    <p>鈴木さんのアルバム例</p>
+    <div class="albums">
+      <!--1つ目のアルバム-->
+      <div class="album">
+        <div class="more">
+          <span><h2 class="album-title">ゆうきくん</h2></span>
+        </div>
+        <div class="album-images">
+          <!-- 固定画像1 -->
+          <%= image_tag "AdobeStock_167647019.jpeg", class: "album-photo" %>
+        </div>
+      </div>
+      <!--2つ目のアルバム-->
+      <div class="album">
+        <div class="more">
+          <span><h2 class="album-title">家族の集い</h2></span>
+        </div>
+        <div class="album-images">
+          <!-- 固定画像2 -->
+          <%= image_tag "AdobeStock_481488260.jpeg", class: "album-photo" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section id="lifestory-download">
     <h2>ダウンロード</h2>
