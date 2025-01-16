@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_album, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_photo, only: [:edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def new
     @photo = @album.photos.new
@@ -55,5 +56,11 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(:description, :images)
+  end
+
+  def authorize_user!
+    unless @album.user == current_user
+      redirect_to new_user_session_path
+    end
   end
 end
