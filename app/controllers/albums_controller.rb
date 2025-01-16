@@ -1,6 +1,8 @@
 class AlbumsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show]
   before_action :set_album, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
   def index
     @albums = Album.includes(:user)
   end
@@ -53,6 +55,12 @@ class AlbumsController < ApplicationController
   def move_to_index
     unless user_signed_in?
       redirect_to action: :index
+    end
+  end
+
+  def authorize_user!
+    unless @album.user == current_user
+      redirect_to new_user_session_path
     end
   end
 

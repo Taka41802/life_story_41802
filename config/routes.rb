@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'albums#index'
-  resources :users, only: :show
+  resources :users, only: [:show]
 end
