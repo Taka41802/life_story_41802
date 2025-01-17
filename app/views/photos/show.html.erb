@@ -1,8 +1,9 @@
 <div class="contents row photo-page">
-  <div class="album">
-    <div class="more">
-      <p class="album-title"><%= @album.title %></p>
-      <ul class="more_list">
+  <div class="photo-page-album">
+    <p class="photo-page-album-title"><%= @album.title %></p>
+    <div class="photo-page-more">
+      <p class="album-title">・・・</p>
+      <ul class="photo-page-more-list">
         <li>
           <%= link_to '編集', edit_album_photo_path(@album, @photo) %>
         </li>
@@ -11,13 +12,20 @@
         </li>
       </ul>
     </div>
+
     <% if @photo.images.attached? %>
-      <div class="album-image-wrapper">
-        <%= image_tag @photo.images, class: "album-photo" %>
+      <div class="photo-page-album-image-wrapper">
+        <%= image_tag @photo.images, class: "photo-page-album-photo" %>
       </div>
     <% else %>
       <p>写真が表示されません。</p>
     <% end %>
+
+    <div class="photo-page-description">
+      <h4>メモ</h4>
+      <p><%= @photo.description %></p>
+    </div>
+
     <%= link_to '戻る', album_path(@album), class: "btn btn-primary" %>
   </div>
 </div>
