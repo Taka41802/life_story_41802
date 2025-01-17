@@ -44,6 +44,10 @@ class PhotosController < ApplicationController
     redirect_to album_path(@album)
   end
 
+  def show
+    
+  end
+
   private
 
   def set_album

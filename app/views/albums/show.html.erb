@@ -16,7 +16,9 @@
             </ul>
           </div>
           <% if photo.images.attached? %>
-            <%= image_tag photo.images, class: "album-photo" %>
+            <%= link_to album_photo_path(@album, photo) do %>
+              <%= image_tag photo.images, class: "album-photo" %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
