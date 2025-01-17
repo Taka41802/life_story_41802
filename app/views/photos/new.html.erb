@@ -1,30 +1,21 @@
-<div class="contents row photo-page">
-  <div class="album">
-    <div class="more">
-      <p class="album-title"><%= @album.title %></p>
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', edit_album_photo_path(@album, @photo) %>
-        </li>
-        <li>
-          <%= link_to '削除', album_photo_path(@album, @photo), data: { turbo_method: :delete } %>
-        </li>
-      </ul>
-    </div>
-
-    <% if @photo.images.attached? %>
-      <div class="album-image-wrapper">
-        <%= image_tag @photo.images, class: "album-photo" %>
+<div class="contents row">
+  <div class="container">
+    <h3>新しい写真を追加する</h3>
+    <%= form_with(model: [@album, @photo], local: true, html: { class: 'photo-form', multipart: true }) do |form| %>
+      <div class="field">
+        <%= form.label :description, "メモ" %>
+        <%= form.text_area :description, class: "form-control" %>
       </div>
-    <% else %>
-      <p>写真が表示されません。</p>
+
+      <div class="field">
+    <%= form.label :images, "写真" %>
+    <%= form.file_field :images , id:"posts_image" %>
+  </div>
+
+      <div class="actions">
+        <%= form.submit "追加する", class: "btn btn-primary" %>
+      </div>
     <% end %>
-
-    <div class="photo-description">
-      <h4>メモ</h4>
-      <p><%= @photo.description %></p>
-    </div>
-
-    <%= link_to '戻る', album_path(@album), class: "btn btn-primary" %>
+    <%= link_to '戻る', album_path(@album), class: "btn btn-secondary mt-3" %>
   </div>
 </div>
