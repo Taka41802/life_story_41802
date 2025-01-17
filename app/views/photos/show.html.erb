@@ -1,0 +1,23 @@
+<div class="contents row photo-page">
+  <div class="album">
+    <div class="more">
+      <p class="album-title"><%= @album.title %></p>
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_album_photo_path(@album, @photo) %>
+        </li>
+        <li>
+          <%= link_to '削除', album_photo_path(@album, @photo), data: { turbo_method: :delete } %>
+        </li>
+      </ul>
+    </div>
+    <% if @photo.images.attached? %>
+      <div class="album-image-wrapper">
+        <%= image_tag @photo.images, class: "album-photo" %>
+      </div>
+    <% else %>
+      <p>写真が表示されません。</p>
+    <% end %>
+    <%= link_to '戻る', album_path(@album), class: "btn btn-primary" %>
+  </div>
+</div>

@@ -27,14 +27,15 @@ class PhotosController < ApplicationController
   end
 
   def update
-    if @photo.update(photo_params.except(:image))
-      images = Array.wrap(photo_params[:image]).reject(&:blank?)
-      @photo.image.purge_later if photo_params[:image].present?
-      images.each do |image|
-        @photo.image.attach(image)
-      end
+    if  @photo.update(photo_params.except(:image))
+        images = Array.wrap(photo_params[:image]).reject(&:blank?)
+        @photo.image.purge_later if photo_params[:image].present?
+        images.each do |image|
+          @photo.image.attach(image)
+        end
 
       redirect_to album_path(@album)
+    else
       render :edit
     end
   end
