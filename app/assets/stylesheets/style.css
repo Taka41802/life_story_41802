@@ -153,7 +153,7 @@ pre {
 /*
  * Set consistent quote types. */
 q {
-  quotes: "“""”""‘""’";
+  quotes: "“" "”" "‘" "’";
 }
 
 /*
@@ -446,9 +446,21 @@ i {
 }
 
 .button {
-  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
+  background-image: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.05) 1%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  background-image: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.05) 1%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 1%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
 }
 
 ul {
@@ -542,8 +554,8 @@ ul li {
   clear: both;
 }
 
-.row.collapse>.column,
-.row.collapse>.columns {
+.row.collapse > .column,
+.row.collapse > .columns {
   position: relative;
   padding-left: 0;
   padding-right: 0;
@@ -593,7 +605,6 @@ ul li {
 }
 
 @media only screen and (max-width: 40em) {
-
   .row {
     width: 100%;
     padding: 0 20px !important;
@@ -620,7 +631,6 @@ ul li {
 
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-
   .row .grid-1,
   .row .grid-2,
   .row .grid-3,
@@ -651,7 +661,10 @@ body {
   letter-spacing: 0.15em;
   font-size: 16px;
   color: #666;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  font-family: "Unica One", "Avenir", "游ゴシック", "YuGothic",
+    "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6",
+    "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック",
+    "MS P Gothic", sans-serif;
   margin: 0;
 }
 
@@ -661,7 +674,7 @@ a {
 }
 
 a:hover {
-  color: #57C3E9;
+  color: #57c3e9;
 }
 
 .bold {
@@ -670,7 +683,7 @@ a:hover {
 
 .serif,
 div.contents.row div.content_post p {
-  font-family: 'ほのか明朝', serif;
+  font-family: "ほのか明朝", serif;
 }
 
 .ultra {
@@ -678,7 +691,7 @@ div.contents.row div.content_post p {
 }
 
 ::selection {
-  background: #D8D8D8;
+  background: #d8d8d8;
 }
 
 .transition,
@@ -702,8 +715,8 @@ form input[type="submit"] {
 header.header div.header__bar.row div.grid-6 a.post {
   padding: 8px 20px;
   font-size: 14px;
-  border: 2px solid #57C3E9;
-  color: #57C3E9;
+  border: 2px solid #57c3e9;
+  color: #57c3e9;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
@@ -732,7 +745,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 
 header.header {
   padding: 10px;
-  border-bottom: 1px solid #D8D8D8;
+  border-bottom: 1px solid #d8d8d8;
   background-color: #fff;
   position: fixed;
   top: 0;
@@ -786,13 +799,13 @@ header.header .user_nav span {
 }
 
 header.header .user_nav span:after {
-  content: '▼';
-  font-size: .7em;
+  content: "▼";
+  font-size: 0.7em;
   margin-left: -4px;
 }
 
 header.header .user_nav span:hover ul {
-  color: #57C3E9;
+  color: #57c3e9;
   display: block;
 }
 
@@ -866,7 +879,7 @@ div.contents.row div.content_post {
 }
 
 div.contents.row div.content_post:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -874,12 +887,34 @@ div.contents.row div.content_post:after {
   right: 0;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF000000', endColorstr='#FFA60000');
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjYyJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC44NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjYyJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC44NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(62%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.85)));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
+  background-image: -webkit-gradient(
+    linear,
+    50% 0%,
+    50% 100%,
+    color-stop(0%, rgba(0, 0, 0, 0)),
+    color-stop(62%, rgba(0, 0, 0, 0)),
+    color-stop(100%, rgba(0, 0, 0, 0.85))
+  );
+  background-image: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 62%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  background-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 62%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 62%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
   z-index: 1;
   border-radius: 3px;
 }
@@ -926,7 +961,7 @@ div.contents.row div.content_post .more ul.more_list li a {
 }
 
 div.contents.row div.content_post .more ul.more_list li a:hover {
-  background-color: #57C3E9;
+  background-color: #57c3e9;
   color: #fff;
 }
 
@@ -983,13 +1018,13 @@ form textarea {
   width: 100%;
   margin: 5px 0 15px;
   padding: 10px;
-  border: 1px solid #D8D8D8;
+  border: 1px solid #d8d8d8;
   border-radius: 5px;
   font-family: "游ゴシック", "YuGothic";
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
+  background-color: #57c3e9;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -1022,7 +1057,7 @@ form input[type="submit"]:hover {
 }
 
 .comments a {
-  color: #57C3E9;
+  color: #57c3e9;
 }
 
 .comments a:hover {
@@ -1032,7 +1067,7 @@ form input[type="submit"]:hover {
 footer {
   margin: 30px auto;
   padding: 10px;
-  color: #D8D8D8;
+  color: #d8d8d8;
 }
 
 footer p {
@@ -1052,7 +1087,6 @@ footer p {
 .search-form .search-btn {
   width: 10%;
 }
-
 
 /* マイページ */
 .albums {
@@ -1114,7 +1148,7 @@ footer p {
 }
 
 .album .more ul.more_list li a:hover {
-  background-color: #57C3E9;
+  background-color: #57c3e9;
   color: #fff;
 }
 
@@ -1131,7 +1165,7 @@ footer p {
 }
 
 .albums-page {
-  background-image: url('AdobeStock_586434195.jpeg');
+  background-image: url("AdobeStock_586434195.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1139,7 +1173,7 @@ footer p {
 }
 
 .photo-page {
-  background-image: url('AdobeStock_489467049.jpeg');
+  background-image: url("AdobeStock_489467049.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1149,11 +1183,99 @@ footer p {
 .album-title {
   padding: 8px 20px;
   font-size: 14px;
-  color: #57C3E9;
+  color: #57c3e9;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
   background-color: #f0f0f0;
+}
+
+.contents {
+  width: 100%; /* コンテンツの幅を100%に設定 */
+  padding: 20px; /* 適度なパディングを追加 */
+  box-sizing: border-box; /* ボックスのサイズを含める */
+}
+
+.photo-page-album {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.photo-page-album-title {
+  font-size: 48px;
+  color: #666;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.photo-page-more {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.photo-page-more-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  text-align: left;
+  width: 120px;
+  right: 0;
+  font-size: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.photo-page-more-list li {
+  border-bottom: 1px solid #ddd;
+}
+
+.photo-page-more-list li:last-child {
+  border-bottom: 0;
+}
+
+.photo-page-more-list li a {
+  display: block;
+  padding: 5px;
+}
+
+.photo-page-more-list li a:hover {
+  background-color: #57c3e9;
+  color: #fff;
+}
+
+.photo-page-album-photo {
+  width: 100%;
+  max-width: 100vh; /* 固定の高さを指定 */
+  object-fit: cover; /* 画像が比率を維持しながら指定された領域に収まるようにする */
+  border: 1px solid #ddd; /* 画像自体に枠をつける */
+  border-radius: 5px; /* 角を丸くする */
+}
+
+.photo-page-album:hover .photo-page-more-list {
+  display: block;
+}
+
+.photo-page-description {
+  margin-top: 20px;
+}
+
+.photo-page {
+  background-image: url("AdobeStock_489467049.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 .contents {

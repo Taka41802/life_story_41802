@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
-  before_action :set_album, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_photo, only: [:edit, :update, :destroy]
+  before_action :set_album, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def new
@@ -27,14 +27,15 @@ class PhotosController < ApplicationController
   end
 
   def update
-    if @photo.update(photo_params.except(:image))
-      images = Array.wrap(photo_params[:image]).reject(&:blank?)
-      @photo.image.purge_later if photo_params[:image].present?
-      images.each do |image|
-        @photo.image.attach(image)
-      end
+    if  @photo.update(photo_params.except(:image))
+        images = Array.wrap(photo_params[:image]).reject(&:blank?)
+        @photo.image.purge_later if photo_params[:image].present?
+        images.each do |image|
+          @photo.image.attach(image)
+        end
 
       redirect_to album_path(@album)
+    else
       render :edit
     end
   end
@@ -42,6 +43,9 @@ class PhotosController < ApplicationController
   def destroy
     @photo.destroy
     redirect_to album_path(@album)
+  end
+
+  def show
   end
 
   private
