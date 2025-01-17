@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
-  before_action :set_album, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_photo, only: [:edit, :update, :destroy]
+  before_action :set_album, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def new
@@ -45,7 +45,6 @@ class PhotosController < ApplicationController
   end
 
   def show
-    
   end
 
   private
