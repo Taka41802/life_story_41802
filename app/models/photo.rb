@@ -2,6 +2,7 @@ class Photo < ApplicationRecord
   has_one_attached :images
   belongs_to :album
   belongs_to :user
+  has_many :comments
 
   before_validation :set_posted_date
 
