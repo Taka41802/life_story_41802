@@ -26,10 +26,10 @@
       <p><%= @photo.description %></p>
 
       <h4>コメント</h4>
-  <%= form_with(model: @comment, local: true) do |form| %>
-    <%= form.text_area :comment, class: 'form-control' %>
-    <%= form.submit 'コメントを追加', class: 'btn btn-primary' %>
-  <% end %>
+        <%= form_with(model: @comment, url: album_photo_comments_path(@album, @photo), local: true) do |form| %>
+          <%= form.text_area :content, class: 'form-control' %>
+          <%= form.submit 'コメントを追加', class: 'btn btn-primary' %>
+        <% end %>
     </div>
 
     <%= link_to '戻る', album_path(@album), class: "btn btn-primary" %>
