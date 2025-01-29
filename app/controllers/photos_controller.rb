@@ -46,6 +46,7 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @comment = @photo.comments.build
   end
 
   private
