@@ -1283,3 +1283,43 @@ footer p {
   padding: 20px; /* 適度なパディングを追加 */
   box-sizing: border-box; /* ボックスのサイズを含める */
 }
+
+.comment {
+  border: 1px solid #57c3e9; /* コメントの枠線 */
+  padding: 10px; /* コメント内の余白 */
+  margin-bottom: 10px; /* コメント間の余白 */
+  border-radius: 5px; /* コメントの角を丸める */
+}
+
+.comment-header {
+  display: flex; /* ヘッダー部分を横並びにする */
+  justify-content: space-between; /* ヘッダー要素を左右に配置 */
+  align-items: center; /* ヘッダー要素を中央揃えにする */
+  margin-bottom: 5px; /* ヘッダーと本文の間の余白 */
+}
+
+.comment-user-name {
+  font-weight: bold; /* ユーザー名を太字にする */
+}
+
+.comment-timestamp {
+  font-size: 0.8em; /* タイムスタンプの文字サイズを小さくする */
+  color: #888; /* タイムスタンプの色をグレーにする */
+}
+
+.comment p {
+  margin: 0; /* 本文の余白をなくす */
+}
+
+/* コメントフォームのスタイル */
+.comment-form {
+  margin-top: 20px; /* コメントフォームとコメントの間の余白 */
+}
+
+.comment-form .form-group {
+  margin-bottom: 10px; /* フォーム要素間の余白 */
+}
+
+.comment-form .form-control {
+  width: 100%; /* フォーム要素を親要素いっぱいに広げる */
+}
