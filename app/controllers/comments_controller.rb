@@ -15,9 +15,19 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to album_path(@album), notice: 'コメントを投稿しました。'
+      redirect_to album_path(@album)
     else
       render 'photos/show'
+    end
+  end
+
+  def destroy
+    if @comment.user == current_user 
+      @comment.destroy
+      redirect_to album_path(@comment.photo.album)
+    else
+      flash[:alert] = 'コメントの削除権限がありません。'
+      redirect_to album_path(@comment.photo.album)
     end
   end
 
