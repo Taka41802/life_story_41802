@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_comment, only: [:destroy]
   
   def create
     @album = Album.find(params[:album_id])
@@ -36,4 +37,9 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
   end
+
+  def find_comment
+    @comment = Comment.find(params[:id])
+  end
+
 end
