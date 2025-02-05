@@ -34,7 +34,7 @@
             <% end %>
             <span class="comment-timestamp"><%= comment.created_at %></span>
             <% if comment.user == current_user %>
-              <%= link_to "削除", album_photo_comment_path(@photo, comment), data: { turbo_method: :delete, confirm: '本当に削除しますか？' }, class: "comment-delete-link" %>
+              <%= link_to "削除", album_photo_comment_path(@album, @photo, comment), data: { turbo_method: :delete }, class: "comment-delete-link" %>
             <% end %>
           </div>
           <p><%= comment.content %></p>
